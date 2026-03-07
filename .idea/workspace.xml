@@ -1,13 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;14.16.0&quot;,
-    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;14.18.63&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/Work/Fskj&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;E:/nvm/v14.16.0/node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.nodejs&quot;
-  }
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="cbb598af-c0db-4203-9417-aaf329ebdc3a" name="更改" comment="提交">
+      <change afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ACCURACY-100.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ARCHITECTURE.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/COMPARISON.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/QUICKSTART.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README-AI.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README-FINAL.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_clauses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_parsed.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_检查清单.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_验证报告.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mcp-config.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/agents/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/agents/clause_identifier.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/agents/document_parser.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/agents/quality_validator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/mcp/server.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/orchestrator.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/test_system.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/实现方案.doc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/招投标文件智能检查清单生成题.docx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/描述.reamed" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
 }</component>
+  <component name="ProjectId" id="3AbaBQY7yuEysA0t15dEGu4F9Tb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "git-widget-placeholder": "dev",
+    "javascript.nodejs.core.library.configured.version": "14.16.0",
+    "javascript.nodejs.core.library.typings.version": "14.18.63",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "E:/Work/agent-work/BiddingDocumentCheck",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.23774.435" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-IU-251.23774.435" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="cbb598af-c0db-4203-9417-aaf329ebdc3a" name="更改" comment="" />
+      <created>1772863588494</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772863588494</updated>
+      <workItem from="1772863590006" duration="332000" />
+      <workItem from="1772863954482" duration="1887000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交" />
+  </component>
 </project>

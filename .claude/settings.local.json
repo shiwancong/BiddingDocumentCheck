@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__jina__read_url",
+      "mcp__jina__extract_pdf",
+      "Bash(python:*)",
+      "Bash(pip install:*)",
+      "Bash(unzip:*)",
+      "Bash(set:*)",
+      "Bash(cat:*)",
+      "Bash(tree:*)",
+      "Bash(powershell:*)"
+    ]
+  }
+}

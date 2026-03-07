@@ -1,0 +1,31 @@
+{
+  "mcpServers": {
+    "jina": {
+      "command": "npx",
+      "args": ["-y", "@jina/mcp-server"],
+      "description": "Jina AI MCP Server for document processing and web content extraction"
+    }
+  },
+  "skills": {
+    "checkBiddingDoc": {
+      "description": "一键检查招标文件，识别所有废标条款和建议性要求",
+      "file": ".claude/skills/check-bidding-doc.md"
+    },
+    "extractClauses": {
+      "description": "提取招标文件中的条款（废标条款或建议性要求）",
+      "file": ".claude/skills/extract-clauses.md"
+    },
+    "validateClauses": {
+      "description": "验证已有条款清单的准确性",
+      "file": ".claude/skills/validate-clauses.md"
+    },
+    "compareVersions": {
+      "description": "对比不同版本的招标文件，识别差异条款",
+      "file": ".claude/skills/compare-versions.md"
+    }
+  },
+  "knowledgeBase": {
+    "rules": "data/knowledge/rules.md",
+    "examples": "data/knowledge/examples.md"
+  }
+}

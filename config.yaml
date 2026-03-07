@@ -1,0 +1,284 @@
+# 招投标文件智能检查清单生成系统
+# AI原生配置文件
+
+system:
+  name: "招投标文件智能检查系统"
+  version: "2.0.0"
+  description: "基于AI能力的招投标文件智能检查清单生成系统"
+  type: "ai-native"
+
+# 核心配置
+core:
+  # 主要AI能力
+  capabilities:
+    - document_understanding   # 文档理解
+    - pattern_recognition      # 模式识别
+    - logical_reasoning       # 逻辑推理
+    - knowledge_application   # 知识运用
+    - structured_output       # 结构化输出
+
+  # 识别目标
+  targets:
+    - disqualification_clauses  # 废标条款
+    - suggestion_requirements   # 建议性要求
+
+  # 条款类型（8种）
+  clause_types:
+    - explicit                 # 明确写出
+    - conditional             # 条件式表达
+    - table_based             # 表格中
+    - cross_chapter           # 跨章节
+    - attachment_referenced   # 附件引用
+    - contradictory           # 矛盾条款
+    - negative_with_exception # 否定+例外
+    - anti_common_sense       # 反常识
+
+  # 条款分类（9种）
+  categories:
+    qualification: "资格"
+    document: "文件"
+    sign_seal: "签字盖章"
+    time_method: "时间方式"
+    price_calculation: "报价算术"
+    responsiveness: "响应性"
+    format: "格式"
+    template: "模板"
+    other: "其他"
+
+# AI模型配置
+ai:
+  provider: "claude"
+  model: "claude-sonnet-4"  # 或 claude-opus-4
+  temperature: 0.3  # 较低温度以确保准确性
+
+  # Few-Shot配置
+  few_shot:
+    examples_per_type: 3  # 每种类型3个示例
+    use_knowledge_base: true
+    dynamic_learning: true
+
+# MCP服务器配置
+mcp:
+  enabled: true
+  servers:
+    jina:
+      description: "文档处理和内容提取"
+      url: "https://jina.ai"
+      capabilities:
+        - read_document
+        - extract_tables
+        - search_content
+
+# 知识库配置
+knowledge:
+  enabled: true
+  path: "data/knowledge"
+
+  # 知识库文件
+  files:
+    rules: "rules.md"
+    examples: "examples.md"
+    patterns: "patterns.md"
+
+  # 动态学习
+  learning:
+    enabled: true
+    save_successful_cases: true
+    learn_from_errors: true
+
+# Claude Code Skills配置
+skills:
+  path: ".claude/skills"
+  main_skill: "check-bidding-doc.md"
+
+  skills:
+    check_bidding_doc:
+      description: "一键检查招标文件"
+      file: "check-bidding-doc.md"
+
+    extract_clauses:
+      description: "提取条款"
+      file: "extract-clauses.md"
+
+    validate_clauses:
+      description: "验证清单"
+      file: "validate-clauses.md"
+
+    compare_versions:
+      description: "对比版本"
+      file: "compare-versions.md"
+
+# 输出配置
+output:
+  format: "markdown"
+  path: "data/output"
+
+  # 输出文件
+  files:
+    checklist: "{filename}_检查清单.md"
+    validation: "{filename}_验证报告.md"
+    analysis: "{filename}_分析日志.md"
+
+  # 表格配置
+  tables:
+    disqualification:
+      name: "废标风险检查"
+      columns:
+        - name: "检查项"
+        - name: "类型"
+        - name: "原文页码"
+        - name: "原文关键信息"
+          note: "必须直接摘录"
+        - name: "逻辑解释"
+          note: "通俗易懂"
+        - name: "参考页码"
+        - name: "额外说明"
+
+    suggestion:
+      name: "建议项清单"
+      columns:
+        - name: "检查项"
+        - name: "类型"
+        - name: "原文页码"
+        - name: "原文关键信息"
+        - name: "逻辑解释"
+        - name: "参考页码"
+        - name: "额外说明"
+
+# 质量标准
+quality:
+  levels:
+    C:
+      name: "C级"
+      description: "识别全部明确写出的废标条款"
+      score_range: [0, 75]
+
+    B:
+      name: "B级"
+      description: "C级 + 其他类型60% + 页码"
+      score_range: [75, 85]
+
+    A:
+      name: "A级"
+      description: "B级 + 其他类型90% + 参考信息"
+      score_range: [85, 90]
+
+    S:
+      name: "S级"
+      description: "A级 + 全部正确 + 多文档验证"
+      score_range: [90, 100]
+
+  # 评分维度
+  dimensions:
+    completeness: 0.3   # 完整性
+    accuracy: 0.3       # 准确性
+    formatting: 0.2     # 格式规范
+    references: 0.2     # 参考信息
+
+# 提示词配置
+prompts:
+  system_prompt: |
+    你是一位资深的招投标文件审查专家，拥有20年经验。
+    你能够准确识别招标文件中的废标条款和建议性要求。
+
+    你的任务是：
+    1. 解析招标文件（.docx/.pdf）
+    2. 识别8种类型的废标条款
+    3. 对每个条款进行分类（9种类型）
+    4. 生成规范的检查清单表格
+
+    注意事项：
+    - 原文关键信息必须直接摘录，不可改写
+    - 逻辑解释要通俗易懂
+    - 注意跨章节关联
+    - 区分废标条款和建议性要求
+
+  analysis_prompt: |
+    请分析以下招标文件内容，识别其中的废标条款和建议性要求。
+
+    文档内容：
+    {document_content}
+
+    请按照以下格式输出：
+    ## 废标风险检查
+    [表格]
+
+    ## 建议项清单
+    [表格]
+
+# 工作流配置
+workflow:
+  steps:
+    - name: "文档解析"
+      description: "解析招标文件，提取内容"
+      tools: ["mcp.read_document"]
+
+    - name: "条款识别"
+      description: "识别8种类型的废标条款"
+      method: "ai_analysis"
+      knowledge: "rules.md"
+
+    - name: "条款分类"
+      description: "对条款进行分类"
+      categories: 9
+
+    - name: "生成输出"
+      description: "生成检查清单表格"
+      format: "markdown"
+
+# 开发配置
+development:
+  mode: "ai-native"  # AI原生模式
+
+  # 代码使用策略
+  code_strategy:
+    preference: "minimal"  # 最小化代码
+    use_cases:
+      - "文件I/O操作"
+      - "MCP服务器通信"
+    avoid:
+      - "硬编码业务逻辑"
+      - "复杂算法实现"
+      - "规则引擎实现"
+
+  # 优先使用AI能力的场景
+  ai_first:
+    - "文档理解"
+    - "模式识别"
+    - "逻辑推理"
+    - "文本分析"
+    - "分类判断"
+
+# 测试配置
+testing:
+  test_documents:
+    - path: "data/test/政府采购类.docx"
+      type: "government"
+      expected_clauses: 15
+
+    - path: "data/test/工程建设类.docx"
+      type: "engineering"
+      expected_clauses: 20
+
+    - path: "data/test/服务采购类.docx"
+      type: "service"
+      expected_clauses: 12
+
+  # S级验证
+  s_level_requirement:
+    min_score: 90
+    min_recognition_rate: 0.95
+    all_tests_passed: true
+
+# 监控配置
+monitoring:
+  enabled: true
+  metrics:
+    - "识别率"
+    - "准确率"
+    - "处理时间"
+    - "用户满意度"
+
+  logging:
+    level: "info"
+    file: "logs/system.log"
