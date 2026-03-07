@@ -9,7 +9,8 @@
       "Bash(set:*)",
       "Bash(cat:*)",
       "Bash(tree:*)",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(head -100 \"E:\\\\Work\\\\agent-work\\\\BiddingDocumentCheck\\\\data\\\\output\"/*检查清单.md)"
     ]
   }
 }
