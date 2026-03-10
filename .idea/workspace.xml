@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="cbb598af-c0db-4203-9417-aaf329ebdc3a" name="更改" comment="提交">
+      <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.claude/skills/check-accurate.md" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/skills/check-accurate.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.claude/skills/check-bidding-doc.md" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/skills/check-bidding-doc.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/QUICKSTART.md" beforeDir="false" afterPath="$PROJECT_DIR$/QUICKSTART.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_clauses.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_parsed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_检查清单.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/output/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿_验证报告.md" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +83,8 @@
       <updated>1772863588494</updated>
       <workItem from="1772863590006" duration="332000" />
       <workItem from="1772863954482" duration="1982000" />
-      <workItem from="1772871761700" duration="696000" />
+      <workItem from="1772871761700" duration="5702000" />
+      <workItem from="1773130257989" duration="2034000" />
     </task>
     <servers />
   </component>

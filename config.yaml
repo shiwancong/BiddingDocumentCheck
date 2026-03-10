@@ -110,14 +110,25 @@ skills:
 
 # 输出配置
 output:
-  format: "markdown"
+  format: "excel"  # 支持 markdown, excel, both
   path: "data/output"
 
   # 输出文件
   files:
     checklist: "{filename}_检查清单.md"
+    checklist_excel: "{filename}_检查清单.xlsx"
     validation: "{filename}_验证报告.md"
     analysis: "{filename}_分析日志.md"
+
+  # Excel 配置
+  excel:
+    enabled: true
+    sheets:
+      summary: "统计摘要"
+      disqualification: "废标风险检查表"  # 红色表头
+      suggestion: "建议项清单表"          # 绿色表头
+      validation: "S级验证报告"
+    script_path: "generate_excel.py"
 
   # 表格配置
   tables:

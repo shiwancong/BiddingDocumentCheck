@@ -10,7 +10,11 @@
       "Bash(cat:*)",
       "Bash(tree:*)",
       "Bash(powershell:*)",
-      "Bash(head -100 \"E:\\\\Work\\\\agent-work\\\\BiddingDocumentCheck\\\\data\\\\output\"/*检查清单.md)"
+      "Bash(head -100 \"E:\\\\Work\\\\agent-work\\\\BiddingDocumentCheck\\\\data\\\\output\"/*检查清单.md)",
+      "Bash(head:*)",
+      "Bash(findstr:*)",
+      "Bash(dir:*)",
+      "Bash(ls:*)"
     ]
   }
 }
