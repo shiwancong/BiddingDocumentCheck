@@ -7,8 +7,43 @@
 │                         用户交互层                              │
 │                                                                   │
 │  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
-│  │ Claude Code  │  │   MCP工具    │  │  知识库查询  │          │
-│  │   Skills     │  │   (Jina)     │  │  (Markdown)   │          │
+│  │ Claude Code  │  │   对话接口    │  │  命令行工具  │          │
+│  │   Skills     │  │  (Chat/Direct) │  │    (CLI)     │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   AI 原生 Agent 层 (.md)                        │
+│                                                                   │
+│  ┌──────────────────────────────────────────────────────────┐   │
+│  │              Agent Manager (agent-manager.md)             │   │
+│  │                 统一管理、任务分发、结果汇总               │   │
+│  └──────────────────────────────────────────────────────────┘   │
+│                                   │                              │
+│           ┌───────────────────────┴────────────────┐            │
+│           ▼                                    ▼               │
+│  ┌──────────────────────┐          ┌──────────────────────┐    │
+│  │ Routing Agent         │          │ Workflow Agent        │    │
+│  │ (routing-agent.md)    │          │ (workflow-agent.md)   │    │
+│  │                       │          │                       │    │
+│  │ 智能路由、决策分析     │          │ 工作流编排、步骤协调   │    │
+│  │ 自动选择 Skill        │          │ 多步骤任务管理        │    │
+│  └──────────────────────┘          └──────────────────────┘    │
+└─────────────────────────────────────────────────────────────────┘
+                              │
+                              ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                   AI 原生 Skills 层 (.md)                       │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │check-bidding │  │extract-clause│  │validate-claus│          │
+│  │    -doc      │  │     -s       │  │     -es      │          │
+│  └──────────────┘  └──────────────┘  └──────────────┘          │
+│                                                                   │
+│  ┌──────────────┐  ┌──────────────┐  ┌──────────────┐          │
+│  │check-accurate│  │compare-version│  │  learn-from  │          │
+│  │              │  │     -s       │  │  -mistakes   │          │
 │  └──────────────┘  └──────────────┘  └──────────────┘          │
 └─────────────────────────────────────────────────────────────────┘
                               │
@@ -164,64 +199,160 @@
 ```
 BiddingDocumentCheck/
 │
-├── 📁 .claude/                  # Claude Code配置
-│   └── 📁 skills/               # AI技能定义
-│       ├── check-bidding-doc.md
-│       ├── extract-clauses.md
-│       ├── validate-clauses.md
-│       └── compare-versions.md
+├── 📁 .claude/                      # Claude Code 配置
+│   │
+│   ├── 📁 skills/                   # AI 原生 Skills 定义
+│   │   ├── check-bidding-doc/
+│   │   │   └── SKILL.md             # 主技能文件（必需）
+│   │   ├── extract-clauses/
+│   │   │   └── SKILL.md
+│   │   ├── validate-clauses/
+│   │   │   └── SKILL.md
+│   │   ├── compare-versions/
+│   │   │   └── SKILL.md
+│   │   ├── check-accurate/
+│   │   │   └── SKILL.md
+│   │   ├── check-suggestions/
+│   │   │   └── SKILL.md
+│   │   └── learn-from-mistakes/
+│   │       └── SKILL.md
+│   │
+│   └── 📁 agents/                   # AI 原生 Subagents 定义
+│       ├── agent-manager.md        # Agent 管理器
+│       ├── routing-agent.md        # 智能路由 Agent
+│       └── workflow-agent.md       # 工作流协调 Agent
 │
-├── 📁 data/                     # 数据目录
-│   ├── 📁 knowledge/            # 知识库（AI核心）
-│   │   ├── rules.md            # 识别规则
-│   │   └── examples.md         # 典型示例
-│   └── 📁 output/              # 输出目录
+├── 📁 data/                         # 数据目录
+│   ├── 📁 knowledge/                # 知识库（AI核心）
+│   │   ├── rules.md                # 识别规则
+│   │   ├── examples.md             # 典型示例
+│   │   ├── patterns.md             # 模式识别
+│   │   ├── accuracy-improvement.md
+│   │   └── complete-cases.md       # 完整案例
+│   │
+│   ├── 📁 output/                  # 输出目录
+│   └── 📁 test/                    # 测试文档
 │
-├── 📁 src/                      # 源代码（最小化）
-│   └── 📁 agents/              # 只包含MCP调用逻辑
+├── 📁 src/                          # 源代码（最小化）
+│   └── generate_excel.py            # Excel 生成工具
 │
-├── 📄 config.yaml              # 系统配置
-├── 📄 mcp-config.json          # MCP配置
-├── 📄 README-AI.md            # AI架构说明
-└── 📄 QUICKSTART.md            # 快速开始
+├── 📄 config.yaml                  # 系统配置
+├── 📄 mcp-config.json              # MCP 配置
+├── 📄 ARCHITECTURE.md              # 架构文档
+├── 📄 README.md                    # 项目说明
+└── 📄 QUICKSTART.md                # 快速开始
 ```
 
-## 使用方式对比
+## Skills 格式规范
 
-### 方式1：Claude Code Skills（推荐）
+每个 Skill 必须遵循以下格式：
 
-```bash
-# 一键检查
-/check-bidding-doc 招标文件.docx
-
-# 提取特定类型
-/extract-clauses 招标文件.docx --type=sign_seal
-
-# 验证清单
-/validate-clauses 清单.json
+```
+.claude/skills/<skill-name>/
+├── SKILL.md        # 主技能文件（必需）
+├── template.md     # 模板文件（可选）
+├── examples/       # 示例目录（可选）
+└── scripts/        # 脚本目录（可选）
 ```
 
-### 方式2：直接对话
+### SKILL.md 必需格式
+
+```yaml
+---
+name: skill-name           # 小写字母、数字和连字符
+description: What this skill does and when to use it
+---
+
+# 技能说明
+
+你是一个...，负责...
+
+## 任务流程
+1. 步骤1
+2. 步骤2
+
+## 输出格式
+...
+```
+
+## Agents (Subagents) 格式规范
+
+每个 Agent 是单个 Markdown 文件：
+
+```
+.claude/agents/<agent-name>.md    # 单个文件，包含配置和系统提示
+```
+
+### Agent.md 必需格式
+
+```yaml
+---
+name: agent-name           # 小写字母、数字和连字符
+description: Claude 何时应委托给此 Agent
+tools: Read, Grep, Glob    # 可选：允许的工具
+model: sonnet              # 可选：使用的模型
+---
+
+# Agent 系统提示
+
+你是一个...，负责...
+
+## 你的能力
+...
+
+## 处理流程
+...
+```
+
+## 使用方式
+
+### 方式 1: 直接对话（推荐）
+
+直接与 Claude 对话，系统会自动理解你的意图：
 
 ```
 用户：请帮我检查这个招标文件
 
-Claude：好的，我来帮您检查...
-[使用AI能力分析]
-[查询知识库规则]
-[生成检查清单]
+Claude（作为 Agent 管理器）：
+- 分析任务：检查招标文件
+- 调用路由 Agent：推荐 check-bidding-doc Skill
+- 执行 Skill：生成检查清单
+- 返回结果：完整的检查清单
 ```
 
-### 方式3：MCP工具
+### 方式 2: 指定工作流
 
-```python
-# 最少化代码，只用于调用MCP
-from mcp import call_tool
+```
+用户：执行完整检查流程
 
-# 读取文档
-content = call_tool("read_document", file="招标文件.docx")
+Claude（作为工作流 Agent）：
+1. 执行 check-bidding-doc（初始检查）
+2. 执行 check-accurate（S级准确检查）
+3. 执行 validate-clauses（验证结果）
+4. 返回完整报告
+```
 
-# 其余由Claude AI处理
+### 方式 3: 特定任务
+
+```
+用户：提取所有签字盖章的条款
+
+Claude（作为路由 Agent）：
+- 识别意图：提取特定类型条款
+- 推荐 Skill：extract-clauses
+- 参数设置：clause_type=sign_seal
+- 执行并返回结果
+```
+
+### 方式 4: 查询系统信息
+
+```
+用户：有哪些可用的 Skills？
+
+Claude（作为 Agent 管理器）：
+- 列出所有 Skills
+- 说明每个 Skill 的功能
+- 提供使用建议
 ```
 
 ## 关键设计原则
@@ -289,11 +420,20 @@ content = call_tool("read_document", file="招标文件.docx")
 | 组件 | 技术 | 说明 |
 |------|------|------|
 | AI模型 | Claude | 核心AI能力 |
-| 接口 | Claude Code Skills | 用户交互 |
-| 文档处理 | Jina MCP | 文档读取 |
+| Agent层 | AI原生 (.md文档) | Agent定义以Markdown形式 |
+| Skill层 | AI原生 (.md文档) | Skill定义以Markdown形式 |
 | 知识存储 | Markdown | 规则和示例 |
 | 配置 | YAML | 系统配置 |
-| 代码 | 最少化Python | 只做I/O |
+| 代码 | 最少化Python | 只做I/O（Excel生成） |
+| 交互方式 | Claude Code / 对话 | 直接对话或Skills |
+
+### AI原生架构特点
+
+1. **零代码 Agent**：Agent 定义全部使用 Markdown 文档
+2. **AI 直接理解**：Claude AI 直接理解和执行 Agent 定义
+3. **易于维护**：更新 .md 文件即可修改 Agent 行为
+4. **快速扩展**：创建新 .md 文件即可添加新 Agent
+5. **透明度高**：Agent 逻辑以人类可读的形式呈现
 
 ## 与原方案对比
 
@@ -307,3 +447,152 @@ content = call_tool("read_document", file="招标文件.docx")
 | 学习能力 | 无 | 持续学习 |
 
 新方案的核心思想：**让AI做AI擅长的事，代码只做必要的事**。
+
+---
+
+## Agent 智能层详解 (AI 原生)
+
+### Agent 架构
+
+Agent 智能层是系统的核心协调层，**所有 Agent 都以 Markdown 文档形式定义**，由 Claude AI 直接理解和执行：
+
+```
+.claude/
+├── agents/                      # Agent 定义目录
+│   ├── agent-manager.md        # Agent 管理器
+│   ├── routing-agent.md        # 智能路由 Agent
+│   └── workflow-agent.md       # 工作流协调 Agent
+│
+└── skills/                      # Skills 定义目录
+    ├── check-bidding-doc.md
+    ├── extract-clauses.md
+    ├── validate-clauses.md
+    ├── compare-versions.md
+    ├── check-accurate.md
+    ├── check-suggestions.md
+    └── learn-from-mistakes.md
+```
+
+### 1. Agent 管理器 (agent-manager.md)
+
+系统的统一入口，负责：
+- **Agent 注册管理**：管理所有已注册的 Agent
+- **任务分发**：将用户任务分发给合适的 Agent
+- **结果汇总**：汇总和整理各 Agent 的执行结果
+- **状态监控**：监控所有 Agent 的运行状态
+- **历史记录**：记录所有任务的执行历史
+
+### 2. 智能路由 Agent (routing-agent.md)
+
+根据用户输入自动判断应该调用哪个 Skill。
+
+**路由策略：**
+- 关键词匹配 (权重 40%)
+- 文件类型匹配 (权重 30%)
+- Skill 优先级 (权重 20%)
+- 参数类型匹配 (权重 10%)
+
+**支持的 Skills：**
+| Skill | 功能描述 |
+|-------|---------|
+| check-bidding-doc | 一键检查招标文件 |
+| extract-clauses | 提取特定类型条款 |
+| validate-clauses | 验证清单准确性 |
+| compare-versions | 对比不同版本 |
+| check-accurate | S级准确性检查 |
+| check-suggestions | 检查建议性要求 |
+
+### 3. 工作流协调 Agent (workflow-agent.md)
+
+管理复杂任务的多步骤执行流程。
+
+**预定义工作流：**
+| 工作流 | 描述 | 步骤数 |
+|-------|------|--------|
+| full_check | 完整检查流程（含 S 级验证） | 3 |
+| quick_check | 快速检查流程 | 1 |
+| extract_and_validate | 提取并验证 | 2 |
+| comparison_workflow | 版本对比 | 2 |
+| improvement_workflow | 学习改进 | 3 |
+
+**工作流特性：**
+- 步骤依赖管理
+- 条件执行
+- 并行执行支持
+- 错误处理和重试
+
+### 使用方式
+
+#### 方式 1: 直接对话（推荐）
+
+```
+用户：请帮我检查这个招标文件
+
+Claude（作为 Agent 管理器）：
+1. 分析任务
+2. 调用路由 Agent
+3. 确定使用 check-bidding-doc Skill
+4. 执行并返回结果
+```
+
+#### 方式 2: 指定工作流
+
+```
+用户：执行完整检查流程，文件是招标文件.docx
+
+Claude（作为工作流 Agent）：
+1. 加载 full_check 工作流
+2. 依次执行：初始检查 → S级准确检查 → 验证结果
+3. 返回完整报告
+```
+
+#### 方式 3: 查询系统状态
+
+```
+用户：有哪些可用的 Agent？
+
+Claude（作为 Agent 管理器）：
+1. 列出所有已注册的 Agent
+2. 列出所有可用的 Skills
+3. 列出所有预定义工作流
+4. 提供使用建议
+```
+
+### AI 原生优势
+
+| 对比项 | 传统代码架构 | AI 原生架构 |
+|--------|-------------|-----------|
+| **Agent 定义** | Python 类/代码 | Markdown 文档 |
+| **修改方式** | 修改代码 + 重启 | 更新 .md 文件 |
+| **扩展性** | 需要开发新 Agent | 创建新 .md 文件 |
+| **调试难度** | 需要调试代码 | 直接阅读文档 |
+| **AI 理解** | 需要文档说明 | AI 直接理解 |
+| **维护成本** | 高 | 低 |
+
+### 扩展自定义 Agent
+
+只需创建新的 `.md` 文件：
+
+```markdown
+---
+description: 你的自定义 Agent 描述
+---
+
+# 自定义 Agent 名称
+
+你是一个自定义 Agent，负责...
+
+## 你的能力
+- 能力 1
+- 能力 2
+
+## 处理流程
+1. 步骤 1
+2. 步骤 2
+
+## 输出格式
+...
+```
+
+然后将文件放入 `.claude/agents/` 目录即可，系统会自动识别。
+

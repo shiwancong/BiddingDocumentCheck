@@ -14,7 +14,8 @@
       "Bash(head:*)",
       "Bash(findstr:*)",
       "Bash(dir:*)",
-      "Bash(ls:*)"
+      "Bash(ls:*)",
+      "mcp__jina__search_web"
     ]
   }
 }

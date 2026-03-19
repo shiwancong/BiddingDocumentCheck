@@ -1,5 +1,6 @@
 ---
-description: 从错误中学习 - 持续优化识别准确性
+name: learn-from-mistakes
+description: 从错误中学习 - 持续优化识别准确性。需要从历史结果中学习、改进检查方法时使用。
 ---
 
 # 从错误中学习 - 持续优化

@@ -1,5 +1,6 @@
 ---
-description: 对比不同版本的招标文件，识别差异条款
+name: compare-versions
+description: 对比不同版本的招标文件，识别差异条款。需要对比版本、查看变更时使用。
 ---
 
 # 对比招标文件版本
