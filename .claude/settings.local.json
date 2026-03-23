@@ -15,7 +15,17 @@
       "Bash(findstr:*)",
       "Bash(dir:*)",
       "Bash(ls:*)",
-      "mcp__jina__search_web"
+      "mcp__jina__search_web",
+      "Bash(git checkout:*)",
+      "Skill(process-chunk)",
+      "Skill(check-bidding-doc)",
+      "WebSearch",
+      "mcp__jina__parallel_search_web",
+      "Bash(if:*)",
+      "Bash(then rm -rf \"E:\\\\Work\\\\agent-work\\\\BiddingDocumentCheck\\\\__pycache__\")",
+      "Bash(else echo \"__pycache__目录不存在\")",
+      "Bash(fi:*)",
+      "Bash(split:*)"
     ]
   }
 }

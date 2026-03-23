@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="cbb598af-c0db-4203-9417-aaf329ebdc3a" name="更改" comment="提交">
+    <list default="true" id="cbb598af-c0db-4203-9417-aaf329ebdc3a" name="更改" comment="修改 智能体结构">
       <change beforePath="$PROJECT_DIR$/.claude/settings.local.json" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/settings.local.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/check-accurate.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/check-bidding-doc.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/check-suggestions.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/compare-versions.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/extract-clauses.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/learn-from-mistakes.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.claude/skills/validate-clauses.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.claude/skills/check-accurate/SKILL.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.claude/skills/check-bidding-doc/SKILL.md" beforeDir="false" afterPath="$PROJECT_DIR$/.claude/skills/check-bidding-doc/SKILL.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ARCHITECTURE.md" beforeDir="false" afterPath="$PROJECT_DIR$/ARCHITECTURE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ACCURACY-100.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/COMPARISON.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README-AI.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README-FINAL.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/doc_content.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/generate_excel.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_doc_content.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_pdf_content.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/temp_pdf_full.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/~$标文件智能检查清单生成题.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/云南水利水电职业学院“双高”项目管理与服务平台建设项目—竞争性磋商文件（稿4-20251202）定稿.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/实现方案.doc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/招投标文件智能检查清单生成题.docx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/招投标文件智能检查清单生成题.pdf" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +93,9 @@
       <workItem from="1772863954482" duration="1982000" />
       <workItem from="1772871761700" duration="5702000" />
       <workItem from="1773130257989" duration="2034000" />
-      <workItem from="1773885621872" duration="3644000" />
+      <workItem from="1773885621872" duration="11337000" />
+      <workItem from="1773970763636" duration="2578000" />
+      <workItem from="1774152673311" duration="3320000" />
     </task>
     <servers />
   </component>
@@ -95,6 +104,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="提交" />
-    <option name="LAST_COMMIT_MESSAGE" value="提交" />
+    <MESSAGE value="修改 智能体结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改 智能体结构" />
   </component>
 </project>
